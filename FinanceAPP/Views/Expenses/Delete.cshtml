@@ -1,0 +1,29 @@
+﻿@model FinanceAPP.Models.Expense
+
+<div class="container">
+    <h2>Delete Expense</h2>
+    <p class="text-danger">Are you sure you want to delete this expense?</p>
+
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input class="form-control" value="@Model.Description" disabled />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount</label>
+        <input class="form-control" value="@Model.Amount" disabled />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input class="form-control" value="@Model.Category" disabled />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input class="form-control" value="@Model.Date.ToString("yyyy-MM-dd")" disabled />
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
